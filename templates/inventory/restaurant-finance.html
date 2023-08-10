@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}Resturant Finances{% endblock %}
+{% block page_content %}
+    <section class="finances">
+        <section class="total-revenue">
+            <h2>Total Revenue: {{ total_revenue }}</h2>
+        </section>
+
+        <section class="total-cost">
+            <h2>Total Cost: {{ total_cost }}</h2>
+        </section>
+
+        <section class="total-profit">
+            <h2>Total Profit: {{ total_profit }}</h2>
+        </section>
+    </section>
+{% endblock %}

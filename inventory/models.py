@@ -41,10 +41,10 @@ class Purchase(models.Model):
     """
     def calculate_cost_item(self):
         recipe_objects = RecipeRequirements.objects.filter(menu_item=self.menu_item)
-        return float(sum([item.ingredient * item.qty for item in recipe_objects]))
+        return float(sum([item.ingredient.price_unit * item.qty for item in recipe_objects]))
 
     """
         Calculates the profit made from a product
     """
     def calculate_profit(self):
-        return float(self.calculate_revenue() - self.calculate_cost_item())
+        return float(self.calculate_revenue()) - self.calculate_cost_item()

@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/inventory/resturant-finance.css' %}">
+
+    <link rel="icon" href="{% static 'images/favicon/favicon.png' %}" type="image/x-icon">
+</head>
+<body>
+<header class="header">
+    <img src="{% static 'images/logo.png' %}" alt="logo" class="logo">
+    <nav class="nav-container">
+        <ul class="nav" role="list">
+            <li>
+                <a href="{% url 'home' %}" class="nav-item">Home</a>
+            </li>
+            <li>
+                <a href="{% url 'ingredients_list' %}" class="nav-item">Ingredients</a>
+            </li>
+            <li>
+                <a href="{% url 'purchases' %}" class="nav-item">Purchases</a>
+            </li>
+            <li>
+                <a href="{% url 'menu_items' %}" class="nav-item">Menu Items</a>
+            </li>
+            <li>
+                <a href="{% url 'restaurant_finance' %}" class="nav-item">Restaurant Finance</a>
+            </li>
+
+        </ul>
+    </nav>
+</header>
+<main>
+    {% block page_content %}
+    {% endblock %}
+</main>
+<footer>
+    <section class="footer-info">
+        <ul role="list">
+            <a href="">Contact Us</a>
+            <a href="">blba</a>
+            <a href="">bla</a>
+            <a href="">bla</a>
+        </ul>
+        <ul role="list">
+            <a href="">Our Servces</a>
+            <a href="">bla</a>
+            <a href="">bla</a>
+            <a href="">bla</a>
+        </ul>
+        <ul role="list">
+            <a href="">Quick Link</a>
+            <a href="">bla</a>
+            <a href="">bal</a>
+            <a href="">bla</a>
+        </ul>
+
+    </section>
+
+</footer>
+</body>
+</html>
