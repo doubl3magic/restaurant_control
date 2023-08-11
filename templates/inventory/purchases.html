@@ -1,10 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+{% extends 'base.html' %}
+{% block title %}Purchases{% endblock %}
+{% block page_content %}
+    <h2>Purchases</h2>
+    <section class="tbl-header">
+        <table>
+            <thead>
+            <tr>
+                <th>Item</th>
+                <th>Purchase Time</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for p in object_list %}
+                <tr>
+                    <td>{{ p.menu_item }}</td>
+                    <td>{{ p.purchase_time }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </section>
+{% endblock %}
