@@ -12,9 +12,29 @@ class Ingredient(models.Model):
 
 
 class MenuItem(models.Model):
+    STARTER = 'SR'
+    MAIN_COURSE = 'MC'
+    SOUP = 'SP'
+    DESSERT = 'DT'
+    ALCOHOL = 'AL'
+    BEVERAGE = 'BE'
+    WATER = 'W'
+
+    MENU_ITEM_CATEGORY_CHOICES = {
+        (STARTER, 'Starter'),
+        (MAIN_COURSE, 'Main Course'),
+        (SOUP, 'Soup'),
+        (DESSERT, 'Desert'),
+        (ALCOHOL, 'Alcohol'),
+        (BEVERAGE, 'Beverage'),
+        (WATER, 'W')
+    }
+
     item = models.CharField(max_length=200)
     price = models.DecimalField(max_digits=6, decimal_places=2)
+    description = models.TextField(max_length=500, blank=True, null=True)
     recipe_url = models.URLField(blank=True, null=True)
+    category = models.CharField(max_length=2, choices=MENU_ITEM_CATEGORY_CHOICES)
 
     def __str__(self):
         return f'{self.item} - {self.price}'
