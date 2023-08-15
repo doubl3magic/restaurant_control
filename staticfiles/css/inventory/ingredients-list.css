@@ -48,3 +48,7 @@ td{
   color: black;
   font-size: 16px;
 }
+
+.actions a {
+  text-decoration: none;
+}

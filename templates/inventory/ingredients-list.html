@@ -20,7 +20,9 @@
                     <td>{{ i.available_qty }}</td>
                     <td>{{ i.unit }}</td>
                     <td>${{ i.price_unit }}</td>
-                    <td class="actions">&#10060 &#x2712</td>
+                    <td class="actions">
+                        <a href="{% url 'delete_ingredient' i.id %}" >&#10060</a> &#x2712
+                    </td>
                 </tr>
             {% endfor %}
             </tbody>

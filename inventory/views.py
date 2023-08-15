@@ -14,6 +14,12 @@ class IngredientsListView(views.ListView, LoginRequiredMixin):
     template_name = './inventory/ingredients-list.html'
 
 
+class DeleteIngredientView(views.DeleteView, LoginRequiredMixin):
+    template_name = './inventory/delete-ingredient.html'
+    model = Ingredient
+    success_url = '/ingredients'
+
+
 class MenuItemsListView(views.ListView, LoginRequiredMixin):
     model = MenuItem
     template_name = './inventory/menu-items.html'
