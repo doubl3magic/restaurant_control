@@ -37,6 +37,7 @@ body {
 
 .menu-item {
   display: flex;
+  width: 80%;
 }
 
 .menu-item-img {

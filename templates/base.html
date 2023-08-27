@@ -8,7 +8,7 @@
     <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/inventory/resturant-finance.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/inventory/ingredients-list.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/inventory/lists.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/inventory/menu-items.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/inventory/index.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/inventory/forms.css' %}">
@@ -24,6 +24,9 @@
             </li>
             <li>
                 <a href="{% url 'ingredients_list' %}" class="nav-item">Ingredients</a>
+            </li>
+            <li>
+                <a href="{% url 'recipe_requirements' %}" class="nav-item">Recipes Req.</a>
             </li>
             <li>
                 <a href="{% url 'purchases' %}" class="nav-item">Purchases</a>

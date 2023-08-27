@@ -1,7 +1,11 @@
 {% extends 'base.html' %}
 {% block title %}Inventory{% endblock %}
 {% block page_content %}
-    <h2>Ingredients</h2>
+
+    <section class="additional">
+        <h1>Ingredients</h1>
+        <a href="{% url 'add_ingredient' %}">Add Ingredient</a>
+    </section>
     <section class="tbl-header">
         <table>
             <thead>
@@ -21,7 +25,8 @@
                     <td>{{ i.unit }}</td>
                     <td>${{ i.price_unit }}</td>
                     <td class="actions">
-                        <a href="{% url 'delete_ingredient' i.id %}" >&#10060</a> &#x2712
+                        <a href="{% url 'delete_ingredient' i.id %}" >&#10060</a>
+                        <a href="{% url 'edit_ingredient' i.id %}" >&#x2712</a>
                     </td>
                 </tr>
             {% endfor %}

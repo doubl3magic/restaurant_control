@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block page_content %}
+    <form method="post" class="rc-form deletion-form">
+    {% csrf_token %}
+        <h3>Delete Purchase</h3>
+        <p>You want to remove this purchase?</p>
+        <input class="btn btn-lg btn-primary inp" type="submit" value="Correct">
+        <a class="btn btn-lg cancel" href="{% url 'purchases' %}">Cancel</a>
+    </form>
+{% endblock %}

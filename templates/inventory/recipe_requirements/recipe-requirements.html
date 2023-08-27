@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %}Recipie Requirements{% endblock %}
+{% block page_content %}
+    <section class="additional">
+        <h1>Recipe Requirements</h1>
+        <a href="{% url 'add_requirement' %}">Add Requirement</a>
+    </section>
+    <section class="tbl-header">
+        <table>
+            <thead>
+            <tr>
+                <th>Menu Item</th>
+                <th>Ingredient</th>
+                <th>Qty.</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for recipe_req in object_list %}
+                <tr>
+                    <td>{{ recipe_req.menu_item }}</td>
+                    <td>{{ recipe_req.ingredient }}</td>
+                    <td>{{ recipe_req.qty }}</td>
+                    <td class="actions">
+                        <a href="{% url 'delete_requirement' recipe_req.id %}">&#10060</a>
+                        <a href="{% url 'edit_requirement' recipe_req.id %}">&#x2712</a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </section>
+{% endblock %}

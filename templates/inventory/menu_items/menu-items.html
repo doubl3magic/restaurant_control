@@ -1,0 +1,222 @@
+{% extends 'base.html' %}
+{% block title %}Menu Items{% endblock %}
+{% block page_content %}
+
+    <section class="additional">
+        <h1>Menu Items</h1>
+        <a href="{% url 'add_item' %}">Add Menu Item</a>
+    </section>
+    <main class="container">
+        <div class="menu">
+            <h2 class="menu-group-heading">Starters</h2>
+            <div class="menu-group">
+                {% if starters %}
+                    {% for i in starters %}
+                        <div class="menu-item">
+                            <img
+                                    src="https://dummyimage.com/600x400/000/fff"
+                                    alt="Item Image"
+                                    class="menu-item-img"
+                            />
+                            <div class="menu-item-text">
+                                <h3 class="menu-item-heading">
+                                    <span class="menu-item-name">{{ i.item }}</span>
+                                    <span class="menu-item-price">${{ i.price }}</span>
+                                    <section class="actions">
+                                        <a href="{% url 'delete_item' i.id %}">&#10060</a>
+                                        <a href="{% url 'edit_item' i.id %}">&#x2712</a>
+                                    </section>
+                                </h3>
+                                <p class="menu-item-desc">
+                                    {{ i.description }}
+                                </p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <h2>No Items yet.</h2>
+                {% endif %}
+            </div>
+        </div>
+        <div class="menu">
+            <h2 class="menu-group-heading">Main Course</h2>
+            <div class="menu-group">
+                {% if main_course %}
+                    {% for i in main_course %}
+                        <div class="menu-item">
+                            <img
+                                    src="https://dummyimage.com/600x400/000/fff"
+                                    alt="Item Image"
+                                    class="menu-item-img"
+                            />
+                            <div class="menu-item-text">
+                                <h3 class="menu-item-heading">
+                                    <span class="menu-item-name">{{ i.item }}</span>
+                                    <span class="menu-item-price">${{ i.price }}</span>
+                                    <section class="actions">
+                                        <a href="{% url 'delete_item' i.id %}">&#10060</a>
+                                        <a href="{% url 'edit_item' i.id %}">&#x2712</a>
+                                    </section>
+                                </h3>
+                                <p class="menu-item-desc">
+                                    {{ i.description }}
+                                </p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <h2>No Items yet.</h2>
+                {% endif %}
+            </div>
+        </div>
+        <div class="menu">
+            <h2 class="menu-group-heading">Soups</h2>
+            <div class="menu-group">
+                {% if soups %}
+                    {% for i in soups %}
+                        <div class="menu-item">
+                            <img
+                                    src="https://dummyimage.com/600x400/000/fff"
+                                    alt="Item Image"
+                                    class="menu-item-img"
+                            />
+                            <div class="menu-item-text">
+                                <h3 class="menu-item-heading">
+                                    <span class="menu-item-name">{{ i.item }}</span>
+                                    <span class="menu-item-price">${{ i.price }}</span>
+                                    <section class="actions">
+                                        <a href="{% url 'delete_item' i.id %}">&#10060</a>
+                                        <a href="{% url 'edit_item' i.id %}">&#x2712</a>
+                                    </section>
+                                </h3>
+                                <p class="menu-item-desc">
+                                    {{ i.description }}
+                                </p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <h2>No Items yet.</h2>
+                {% endif %}
+            </div>
+        </div>
+        <div class="menu">
+            <h2 class="menu-group-heading">Desserts</h2>
+            <div class="menu-group">
+                {% if desserts %}
+                    {% for i in desserts %}
+                        <div class="menu-item">
+                            <img
+                                    src="https://dummyimage.com/600x400/000/fff"
+                                    alt="Item Image"
+                                    class="menu-item-img"
+                            />
+                            <div class="menu-item-text">
+                                <h3 class="menu-item-heading">
+                                    <span class="menu-item-name">{{ i.item }}</span>
+                                    <span class="menu-item-price">${{ i.price }}</span>
+                                    <section class="actions">
+                                        <a href="{% url 'delete_item' i.id %}">&#10060</a>
+                                        <a href="{% url 'edit_item' i.id %}">&#x2712</a>
+                                    </section>
+                                </h3>
+                                <p class="menu-item-desc">
+                                    {{ i.description }}
+                                </p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <h2>No Items yet.</h2>
+                {% endif %}
+            </div>
+        </div>
+        <div class="menu">
+            <h2 class="menu-group-heading">Alcohol</h2>
+            <div class="menu-group">
+                {% if alcohol %}
+                    {% for i in alcohol %}
+                        <div class="menu-item">
+                            <img
+                                    src="https://dummyimage.com/600x400/000/fff"
+                                    alt="Item Image"
+                                    class="menu-item-img"
+                            />
+                            <div class="menu-item-text">
+                                <h3 class="menu-item-heading">
+                                    <span class="menu-item-name">{{ i.item }}</span>
+                                    <span class="menu-item-price">${{ i.price }}</span>
+                                    <section class="actions">
+                                        <a href="{% url 'delete_item' i.id %}">&#10060</a>
+                                        <a href="{% url 'edit_item' i.id %}">&#x2712</a>
+                                    </section>
+                                </h3>
+                                <p class="menu-item-desc">
+                                    {{ i.description }}
+                                </p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <h2>No Items yet.</h2>
+                {% endif %}
+            </div>
+        </div>
+        <div class="menu">
+            <h2 class="menu-group-heading">Drinks</h2>
+            <div class="menu-group">
+                {% if beverage %}
+                    {% for i in beverage %}
+                        <div class="menu-item">
+                            <img
+                                    src="https://dummyimage.com/600x400/000/fff"
+                                    alt="Item Image"
+                                    class="menu-item-img"
+                            />
+                            <div class="menu-item-text">
+                                <h3 class="menu-item-heading">
+                                    <span class="menu-item-name">{{ i.item }}</span>
+                                    <span class="menu-item-price">${{ i.price }}</span>
+                                    <section class="actions">
+                                        <a href="{% url 'delete_item' i.id %}">&#10060</a>
+                                        <a href="{% url 'edit_item' i.id %}">&#x2712</a>
+                                    </section>
+                                </h3>
+                                <p class="menu-item-desc">
+                                    {{ i.description }}
+                                </p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+                {% if water %}
+                    {% for i in water %}
+                        <div class="menu-item">
+                            <img
+                                    src="https://dummyimage.com/600x400/000/fff"
+                                    alt="Item Image"
+                                    class="menu-item-img"
+                            />
+                            <div class="menu-item-text">
+                                <h3 class="menu-item-heading">
+                                    <span class="menu-item-name">{{ i.item }}</span>
+                                    <span class="menu-item-price">${{ i.price }}</span>
+                                    <section class="actions">
+                                        <a href="{% url 'delete_item' i.id %}">&#10060</a>
+                                        <a href="{% url 'edit_item' i.id %}">&#x2712</a>
+                                    </section>
+                                </h3>
+                                <p class="menu-item-desc">
+                                    {{ i.description }}
+                                </p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+                {% if not water and not beverage %}
+                    <h2>No Items Yet.</h2>
+                {% endif %}
+            </div>
+        </div>
+    </main>
+{% endblock %}

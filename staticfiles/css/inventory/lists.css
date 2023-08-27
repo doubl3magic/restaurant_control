@@ -3,6 +3,13 @@ body {
     flex-direction: column;
 }
 
+.additional {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
 h1{
   font-size: 30px;
   color: #000000;
@@ -13,7 +20,7 @@ h1{
 }
 table{
   width:100%;
-  margin-top: 100px;
+  margin-top: 3rem;
   margin-bottom: 100px;
   table-layout: fixed;
 }
@@ -49,6 +56,7 @@ td{
   font-size: 16px;
 }
 
-.actions a {
+a {
   text-decoration: none;
+  color: black;
 }

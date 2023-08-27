@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block page_content %}
+    <form method="post" class="rc-form deletion-form">
+    {% csrf_token %}
+        <h3>Delete Ingredient</h3>
+        <p>You want to remove the requirement?</p>
+        <input class="btn btn-lg btn-primary inp" type="submit" value="Correct">
+        <a class="btn btn-lg cancel" href="{% url 'recipe_requirements' %}">Cancel</a>
+    </form>
+{% endblock %}
