@@ -7,11 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/inventory/resturant-finance.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/inventory/restaurant-finance.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/inventory/lists.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/inventory/menu-items.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/inventory/index.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/inventory/forms.css' %}">
+
     <link rel="icon" href="{% static 'images/favicon/favicon.png' %}" type="image/x-icon">
 </head>
 <body>
@@ -19,25 +20,33 @@
     <img src="{% static 'images/logo.png' %}" alt="logo" class="logo">
     <nav class="nav-container">
         <ul class="nav" role="list">
-            <li>
-                <a href="{% url 'home' %}" class="nav-item">Home</a>
-            </li>
-            <li>
-                <a href="{% url 'ingredients_list' %}" class="nav-item">Ingredients</a>
-            </li>
-            <li>
-                <a href="{% url 'recipe_requirements' %}" class="nav-item">Recipes Req.</a>
-            </li>
-            <li>
-                <a href="{% url 'purchases' %}" class="nav-item">Purchases</a>
-            </li>
-            <li>
-                <a href="{% url 'menu_items' %}" class="nav-item">Menu Items</a>
-            </li>
-            <li>
-                <a href="{% url 'restaurant_finance' %}" class="nav-item">Restaurant Finance</a>
-            </li>
-
+            {% if request.user.is_authenticated == False %}
+                <li>
+                    <a href="{% url 'login' %}" class="nav-item">Login</a>
+                </li>
+            {% else %}
+                <li>
+                    <a href="{% url 'home' %}" id='nav-item' class="nav-item">Home</a>
+                </li>
+                <li>
+                    <a href="{% url 'ingredients_list' %}" class="nav-item">Ingredients</a>
+                </li>
+                <li>
+                    <a href="{% url 'recipe_requirements' %}" class="nav-item">Recipes Req.</a>
+                </li>
+                <li>
+                    <a href="{% url 'purchases' %}" class="nav-item">Purchases</a>
+                </li>
+                <li>
+                    <a href="{% url 'menu_items' %}" class="nav-item">Menu Items</a>
+                </li>
+                <li>
+                    <a href="{% url 'restaurant_finance' %}" class="nav-item">Restaurant Finance</a>
+                </li>
+                <li>
+                    <a href="{% url 'logout' %}" class="logout">Logout</a>
+                </li>
+            {% endif %}
         </ul>
     </nav>
 </header>

@@ -1,7 +1,7 @@
 from django import forms
 from django.core.exceptions import ValidationError
 
-from inventory.models import Ingredient, RecipeRequirements, MenuItem, Purchase
+from resturant_control.inventory.models import Ingredient, RecipeRequirements, MenuItem, Purchase
 
 
 class IngredientForm(forms.ModelForm):

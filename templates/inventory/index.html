@@ -6,7 +6,11 @@
         <div class="overlay text-white text-center">
             <h1 class="display-2 font-weight-bold my-3">ResControl</h1>
             <h2 class="display-4 mb-5">We care for your restaurant.</h2>
-            <a class="btn btn-lg btn-primary" href="">Menu Items</a>
+            {% if user == False %}
+                <a class="btn btn-lg btn-primary" href="{% url 'login' %}">Login</a>
+            {% else %}
+                <a class="btn btn-lg btn-primary" href="{% url 'menu_items' %}">Menu Items</a>
+            {% endif %}
         </div>
     </section>
 {% endblock %}

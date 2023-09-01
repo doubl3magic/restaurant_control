@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class InventoryConfig(AppConfig):
+class AuthAppConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'inventory'
+    name = 'resturant_control.auth_app'

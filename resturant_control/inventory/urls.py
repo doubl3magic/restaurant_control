@@ -1,6 +1,6 @@
 from django.urls import path
 
-from inventory.views import HomeView, IngredientsListView, MenuItemsListView, PurchasesListView, RestaurantFinanceView, \
+from resturant_control.inventory.views import HomeView, IngredientsListView, MenuItemsListView, PurchasesListView, RestaurantFinanceView, \
     DeleteIngredientView, RecipeRequirementsListView, AddIngredientView, EditIngredientView, AddMenuItemView, \
     AddRecipeRequirementView, AddPurchaseView, EditMenuItemView, DeleteMenuItemView, \
     DeletePurchaseView, EditRecipeRequirementView, DeleteRecipeRequirementView

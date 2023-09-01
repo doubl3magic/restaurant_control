@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from inventory.models import Ingredient, MenuItem, RecipeRequirements, Purchase
+from resturant_control.inventory.models import Ingredient, MenuItem, RecipeRequirements, Purchase
 
 
 @admin.register(Ingredient)

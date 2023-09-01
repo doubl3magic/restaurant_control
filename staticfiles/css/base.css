@@ -1,6 +1,11 @@
 @import "reset.css";
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;1,200;1,600&family=PT+Sans:wght@400;700&family=PT+Serif:wght@400;700&display=swap');
 
+html {
+    scroll-behavior: smooth;
+}
+
+
 body {
     font-family: 'Josefin Sans', sans-serif;
     background-color: #bdc4b5;
@@ -42,6 +47,12 @@ ul {
     color: #000000;
 }
 
+.active {
+    padding: 5px;
+    background-color: #20BF55;
+    color: white;
+}
+
 footer {
     background-color: #f4e4d4;
     color: black;
@@ -69,3 +80,9 @@ footer {
 }
 
 
+.logout {
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    color: #DD2D4A;
+}
