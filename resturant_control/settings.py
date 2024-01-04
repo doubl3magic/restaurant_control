@@ -1,12 +1,23 @@
 from pathlib import Path
+import environ
+import dj_database_url
+import os
+
+env = environ.Env()
+environ.Env.read_env()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-insecure-v3as2jfahcy2$v8b-(r*8-u2b2i3b5x(_7b)6!3%oae@%4c6%c'
+SECRET_KEY = env('SECRET_KEY')
 
-DEBUG = True
+DEBUG = env('DEBUG')
 
 ALLOWED_HOSTS = []
+
+RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+if RENDER_EXTERNAL_HOSTNAME:
+    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
+
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -51,12 +62,15 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'resturant_control.wsgi.application'
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+if not DEBUG:
+    DATABASES = {'default': dj_database_url.parse(env('DATABASE_URL'))}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': 'db.sqlite3',
+        }}
+
 
 AUTH_USER_MODEL = 'auth_app.ResControlUser'
 
@@ -86,9 +100,14 @@ USE_TZ = True
 MEDIA_ROOT = BASE_DIR / 'mediafiles'
 MEDIA_URL = '/media/'
 
-STATIC_URL = 'static/'
-STATICFILES_DIRS = (
-    BASE_DIR / 'staticfiles',
-)
+STATIC_URL = '/static/'
+
+if not DEBUG:
+    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+else:
+    STATICFILES_DIRS = (
+        BASE_DIR / 'staticfiles',
+    )
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
