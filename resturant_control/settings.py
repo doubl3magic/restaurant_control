@@ -63,14 +63,13 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'resturant_control.wsgi.application'
 
-if not DEBUG:
-    DATABASES = {'default': dj_database_url.parse(env('DATABASE_URL'))}
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': 'db.sqlite3',
-        }}
+DATABASES = {'default': dj_database_url.parse(env('DATABASE_URL'))}
+# else:
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.sqlite3',
+#             'NAME': 'db.sqlite3',
+#         }}
 
 
 AUTH_USER_MODEL = 'auth_app.ResControlUser'
