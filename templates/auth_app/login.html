@@ -6,11 +6,11 @@
     <div class="cta-form">
       <h2>Log in</h2>
     </div>
-    <form action="{% url 'login' %}" method="post" class="form">
+    <form action="{% url 'login' %}" method="post" class="rc-form">
         {% csrf_token %}
         {{ form }}
 
-        <input class="btn btn-lg btn-primary inp" type="submit" value="Login">
+        <input class="btn-res btn-lg-res btn-primary-res inp" type="submit" value="Login">
     </form>
     <a href="{% url 'register' %}">You don't have an account?</a>
   </div>

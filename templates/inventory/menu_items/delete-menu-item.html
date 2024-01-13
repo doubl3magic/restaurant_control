@@ -4,7 +4,7 @@
     {% csrf_token %}
         <h3>Delete Menu Item</h3>
         <p>You want to remove {{ object.item }}?</p>
-        <input class="btn btn-lg btn-primary inp" type="submit" value="Correct">
-        <a class="btn btn-lg cancel" href="{% url 'menu_items' %}">Cancel</a>
+        <input class="btn-res btn-lg-res btn-primary-res inp" type="submit" value="Correct">
+        <a class="btn-res btn-lg-res cancel" href="{% url 'menu_items' %}">Cancel</a>
     </form>
 {% endblock %}

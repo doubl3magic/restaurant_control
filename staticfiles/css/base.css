@@ -38,19 +38,23 @@ ul {
     flex-direction: row;
     justify-content: space-between;
     gap: 20px;
-
+    background-color: #f4e4d4;
 }
 
-.nav .nav-item {
-    cursor: pointer;
-    text-decoration: none;
-    color: #000000;
+.navbar {
+    background-color: #f4e4d4;
 }
 
-.active {
-    padding: 5px;
-    background-color: #20BF55;
-    color: white;
+.navbar-brand {
+    color: #b5bdc4;
+}
+
+.nav-link {
+    color: #97a28a;
+}
+
+.navbar li {
+    list-style-type: none;
 }
 
 footer {
@@ -76,7 +80,8 @@ footer {
 .footer-info ul {
     display: flex;
     flex-direction: column;
-    align-items: center
+    align-items: center;
+    width: 100%;
 }
 
 
@@ -85,4 +90,18 @@ footer {
     font-weight: 600;
     cursor: pointer;
     color: #DD2D4A;
+}
+
+.login {
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    color: #bdc4b5;
+}
+
+@media (max-width:480px) {
+    .footer-info {
+        margin: 0;
+        width: 390px;
+    }
 }

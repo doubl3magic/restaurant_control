@@ -1,6 +1,7 @@
 #hero .overlay {
     margin-top: 90px;
     height: 800px;
+    width: 100%;
     background-color: #bdc4b5;    display: -webkit-flex;
     display: -ms-flex;
     display: -webkit-box;
@@ -52,6 +53,16 @@
 
 .mb-5 {
     margin-bottom: 3rem !important;
+}
+
+.rc-title {
+    width: 100%;
+    font-size: 40px;
+}
+
+.rc-title-2 {
+    width: 80%;
+    font-size: 24px;
 }
 
 .btn-lg, .btn-group-lg > .btn {

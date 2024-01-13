@@ -4,12 +4,12 @@
 {% block page_content %}
     <section id="hero">
         <div class="overlay text-white text-center">
-            <h1 class="display-2 font-weight-bold my-3">ResControl</h1>
-            <h2 class="display-4 mb-5">We care for your restaurant.</h2>
+            <h1 class="display-2 font-weight-bold my-3 rc-title">ResControl</h1>
+            <h2 class="display-4 mb-5 rc-title-2">We care for your restaurant.</h2>
             {% if user == False %}
-                <a class="btn btn-lg btn-primary" href="{% url 'login' %}">Login</a>
+                <a class="btn-res btn-lg-res btn-primary-res" href="{% url 'login' %}">Login</a>
             {% else %}
-                <a class="btn btn-lg btn-primary" href="{% url 'menu_items' %}">Menu Items</a>
+                <a class="btn-res btn-lg-res btn-primary-res" href="{% url 'menu_items' %}">Menu Items</a>
             {% endif %}
         </div>
     </section>
